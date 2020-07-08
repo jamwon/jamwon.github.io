@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+dataLayer = [];
+
+var tOID, tCID, tST, tCat, tSKU, tQ, tPromo;
+
+try {
+	tOID = localStorage.getItem("txtOrderID");
+	tST = localStorage.getItem("txtSubTotal");
+	tCat = localStorage.getItem("txtCategory");
+	tSKU = localStorage.getItem("txtSKU");
+	tQ = localStorage.getItem("txtQuantity");
+	tPromo = localStorage.getItem("txtPromo");
+
+	dataLayer.push({
+		'txtOrderID': tOID,
+		'txtPromo': tPromo,
+		'txtItems': [{
+			'txtSubTotal': tST,
+			'txtCategory': tCat,
+			'txtSKU': tSKU,
+			'txtQuantity': tQ
+		}]
+	});
+}
+catch(err) {
+	console.log("Error: No order details to Check-Out.");
+}
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MD8XQX3');</script>
+<!-- End Google Tag Manager -->
+<title>Checkout Page</title>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MD8XQX3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<h1>Checkout Page</h1>
+<p>This is the simulated Checkout page confirming purchase is successful.</p>
+</body>
+</html>

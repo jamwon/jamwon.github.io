@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+  dataLayer = [];
+</script>
+<!-- Google Tag Manager -->
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MD8XQX3');</script>
+<!-- End Google Tag Manager -->
+<title>Data Layer Test / Login Test</title>
+<script type="text/javascript">
+function populateCustId() {
+	var custIDNum = Math.floor(Math.random() * 1000000000);
+	
+	document.getElementById("txtCustID").value = custIDNum;
+	localStorage.setItem("txtCustID", custIDNum);
+};
+function login() {
+	dataLayer.push({'customerId': document.getElementById('txtCustID').value,'customerEmail': document.getElementById('txtCustEmail').value});
+	localStorage.setItem('customerId', document.getElementById('txtCustID').value);
+	localStorage.setItem('customerEmail', document.getElementById('txtCustEmail').value);
+}
+</script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MD8XQX3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<h1>Data Layer Test / Login Test</h1>
+<p>This is the simulated campaign landing page.</p>
+<form>
+Customer ID: <input type="text" id="txtCustID" name="txtCustID" /><br />
+Customer Email: <input type="text" id="txtCustEmail" name="txtCustEmail" /><br />
+</form>
+<button type="button" onclick="populateCustId();">Random Cust ID</button>
+<button type="button" onclick="login();">Login</button>
+<br />
+<a href="/index.html">Back to home page</a>
+</body>
+</html>
